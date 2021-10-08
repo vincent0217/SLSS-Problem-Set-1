@@ -30,7 +30,7 @@ time.sleep(1)
 
 # 2. text (e.g. What is Harry Potter's last name?)
 num_question += 1
-initials = input(f"What is Michael Jordan's initials: ").lower().strip(".,?!")
+initials = input(f"What are Michael Jordan's initials: ").lower().strip(".,?!")
 if str(initials) == "mj":
     print(f"Fantastic!")
     score += 1
@@ -42,14 +42,15 @@ time.sleep(1)
 # 3. a selection (Which of these choices are correct? A, B, or C?)
 num_question += 1
 answer = input(f"What is the colour of the sky? Select one of the options below.\n\nA. Blue\nB. Red\nC. purple\n").lower().strip("!?.,")
+
 a = "blue"
 b = "red"
 c = "purple"
 
-if answer == "a":
+if answer == a:
     print("Wow, you rock!")
     score += 1
-elif answer == "b":
+elif answer == b:
     print("Dude, what kind of sky is red?")
 else:
     print("Noooooo. We live in different universes.")
@@ -70,11 +71,11 @@ print("")
 # Question 5
 num_question += 1
 answer = input("What month is Thanksgiving in?\n").lower().strip("!?.,")
-if answer in ["october", "10"]:
+if answer in ["October", "10", "Oct"]:
     print("You know your stuff")
     score += 1
 else:
-    print("smh.")
+    print("Dang.")
 time.sleep(1)
 print("")
 
@@ -84,17 +85,20 @@ print(f"Congrats {user_name}! You have finished the quiz.")
 print(f"Your total score and percentage correct are {score} and {average_score}%.")
 print(f"")
 
-# --------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 total_score = 0
 
 questions = [
-    ["What is (1 + 1)*3?",[6]]
-    ["what is Michael Jordan's initials?",["mj"]]
-    ["What is the colour of the sky?",[a]]
-    ["What coding language are we using right now?",["Python"]]
-    ["What month is Thanksgiving in?",[October]]
-].lower().strip("!?.,")
-score = 0
+    ["What is (1 + 1)*3?", [6]],
+    ["What are Michael Jordan's initials?", ["mj"]],
+    ["What is the colour of the sky?", [[a]],
+    ["What coding language are we using right now?", ["Python"]],
+    ["What month is Thanksgiving in?", ["October", "10"]]
+]
+
 for question in questions:
     print(question[0])
+
+
+
 
